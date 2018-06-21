@@ -14,11 +14,11 @@ require "form_core/concerns/models/field"
 module FormCore
   class << self
     def virtual_model_class
-      @virtual_model_class ||= VirtualModel
+      @virtual_model_class ||= ::VirtualModel
     end
 
     def virtual_model_class=(klass)
-      unless klass && klass < VirtualModel
+      unless klass && klass < ::VirtualModel
         raise ArgumentError, "#{klass} should be sub-class of #{VirtualModel}."
       end
 
